@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE FLAGPOCALYPSE Support Form</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -33,25 +32,38 @@
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
     <div class="form-container p-8 w-full max-w-md mx-auto">
         <h1 class="text-3xl font-bold text-center text-white mb-6">THE FLAGPOCALYPSE Support 👽</h1>
-
         <form>
-            <!-- Category Dropdown -->
             <div class="mb-5">
                 <label for="category" class="block text-white text-sm font-semibold mb-2">Category</label>
                 <select id="category" class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out bg-gray-700 text-white">
                     <option value="">Select a Category</option>
-                    <option value="technical">Technical Issues (Streaming/Playback) 📺</option>
-                    <option value="billing">Billing & Payments 💸</option>
-                    <option value="content">Content Feedback (Show-Related) ✍️</option>
-                    <option value="merchandise">Merchandise & Store 🛍️</option>
+                    <option value="technical">Technical Issues (Website/Playback) 📺</option>
+                    <option value="billing">Billing & Payments 💸 - Coming Soon</option>
+                    <option value="content">Content Feedback (Show-Related) ✍️ - Coming Soon</option>
+                    <option value="merchandise">Merchandise & Store 🛍️ - Coming Soon</option>
+                    <option value="episode-player">Episode Player Issues 🎬 - Coming Soon</option>
+
+                    <option value="account-information">Account Information ℹ️ - Under Maintenance</option>
+                    <option value="security-privacy">Security & Privacy 🔒</option>
+                    <option value="copyright-licensing">Copyright & Licensing ⚖️</option>
+                    <option value="casting-talent-submission">Casting & Talent Submissions 🌟</option>
+                    <option value="script-story-ideas">Script & Story Ideas 💡</option>
+                    <option value="locations-set-suggestions">Locations & Set Suggestions 🗺️</option>
+                    <option value="press-kit-request">Press Kit Request 📄</option>
+                    <option value="sponsorship-advertising">Sponsorship & Advertising 📈</option>
+                    <option value="fan-events-meetups">Fan Events & Meetups 🎉</option>
+                    <option value="general-inquiry">General Inquiry ❓</option>
+
+
                     <option value="fan-community">Fan & Community 🤝</option>
                     <option value="media-press">Media & Press Inquiries 📰</option>
                     <option value="accessibility">Accessibility & Inclusivity 🧑‍🦽</option>
-                    <option value="general">General Inquiry ❓</option>
+                    <option value="job-opportunities">Job Opportunities 💼</option>
+                    <option value="report-bug">Report a Website Bug 🐞</option>
+                    <option value="partnership-sponsorship">Partnership & Sponsorship ✨</option>
                 </select>
             </div>
 
-            <!-- Subcategory Dropdown -->
             <div class="mb-6">
                 <label for="subcategory" class="block text-white text-sm font-semibold mb-2">Subcategory</label>
                 <select id="subcategory" class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out bg-gray-700 text-white" disabled>
@@ -59,19 +71,16 @@
                 </select>
             </div>
 
-            <!-- Description Textarea -->
             <div class="mb-6">
                 <label for="description" class="block text-white text-sm font-semibold mb-2">Description</label>
                 <textarea id="description" rows="5" class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y transition duration-200 ease-in-out bg-gray-700 text-white" placeholder="Please describe your issue or feedback in detail..."></textarea>
             </div>
 
-            <!-- Submit Button -->
             <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200 ease-in-out shadow-md">
                 Submit Support Request
             </button>
         </form>
 
-        <!-- Custom Message Box for alerts (instead of alert()) -->
         <div id="messageBox" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center p-4">
             <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
                 <p id="messageText" class="text-gray-800 text-lg mb-4"></p>
@@ -92,35 +101,74 @@
         // Define subcategories based on categories for a TV show context
         const subcategories = {
             technical: [
-                'Streaming Problems',
-                'Audio/Video Sync Issues',
-                'Buffering/Lag',
-                'Subtitle/Closed Captioning Issues',
-                'Platform Compatibility',
-                'Broken Links/Content'
+                'Website Loading Issues',
+                'Navigation Problems',
+                'Broken Links'
             ],
-            billing: [
-                'Payment Error',
-                'Refund Request',
-                'Purchase History',
-                'Fraudulent Activity',
-                'Invoice/Receipt Request'
+            billing: [], // Empty for "Coming Soon"
+            content: [], // Empty for "Coming Soon"
+            merchandise: [], // Empty for "Coming Soon"
+            'episode-player': [], // Empty for "Coming Soon"
+
+            // Subcategories for new categories (adjusted for no accounts)
+            'account-information': [], // Empty for "Under Maintenance"
+            'security-privacy': [
+                'Data Privacy Concerns',
+                'Website Security Questions',
+                'Privacy Policy Questions',
+                'Reporting Suspicious Website Activity',
+                'Other Security Issue'
             ],
-            content: [
-                'Episode-Specific Feedback',
-                'Plot/Storyline Feedback',
-                'Character Feedback',
-                'Suggestions for Future Seasons',
-                'Reporting Inaccuracies/Errors',
-                'Missing Episodes/Content'
+            'copyright-licensing': [
+                'Copyright Infringement Report',
+                'Content Usage Inquiry',
+                'Licensing Request',
+                'Intellectual Property Question'
             ],
-            merchandise: [
-                'Order Status Inquiry',
-                'Product Defect/Damage',
-                'Shipping Issues',
-                'Return/Exchange Request',
-                'Merchandise Suggestions'
+            'casting-talent-submission': [
+                'Actor Submission Inquiry',
+                'Crew Portfolio Submission',
+                'Audition Information',
+                'Talent Partnership'
             ],
+            'script-story-ideas': [
+                'Original Script Submission',
+                'Story Idea Suggestion',
+                'Fan Fiction Inquiry',
+                'Writer Collaboration'
+            ],
+            'locations-set-suggestions': [
+                'Filming Location Suggestion',
+                'Set Design Idea',
+                'Prop Donation/Loan',
+                'Venue Collaboration'
+            ],
+            'press-kit-request': [
+                'Request Full Press Kit',
+                'Specific Asset Request (Photos/Videos)',
+                'Media Kit for Event',
+                'Interview Request'
+            ],
+            'sponsorship-advertising': [
+                'Sponsorship Proposal',
+                'Advertising Inquiry',
+                'Product Placement Opportunity',
+                'Brand Integration'
+            ],
+            'fan-events-meetups': [
+                'Suggest a Fan Event Location',
+                'Request for Guest Appearance',
+                'Fan Meetup Support',
+                'Virtual Event Idea'
+            ],
+            'general-inquiry': [
+                'General Question About The Show',
+                'Website Navigation Help',
+                'Feedback on Support Form',
+                'Other General Question'
+            ],
+
+
             'fan-community': [
                 'Fan Art Submission',
                 'Community Guidelines Inquiry',
@@ -139,12 +187,24 @@
                 'Translation/Dubbing Feedback',
                 'Language Support'
             ],
-            general: [
-                'General Question',
-                'Website Feedback',
-                'Report Misconduct',
-                'Other'
-            ]
+            'job-opportunities': [
+                'Acting/Casting Inquiry',
+                'Crew Position Inquiry',
+                'Internship Opportunities',
+                'General Job Application'
+            ],
+            'report-bug': [
+                'Website Display Bug',
+                'Functionality Bug',
+                'Broken Feature',
+                'Other Website Bug'
+            ],
+            'partnership-sponsorship': [
+                'Brand Partnership',
+                'Event Sponsorship',
+                'Content Collaboration',
+                'Other Partnership'
+            ],
         };
 
         /**
@@ -163,18 +223,40 @@
             // Clear existing options in subcategory dropdown
             subcategoryDropdown.innerHTML = '<option value="">Select a Subcategory</option>';
 
+            // List of "Unavailable" categories (Coming Soon or Under Maintenance)
+            const unavailableCategories = ['merchandise', 'episode-player', 'content', 'billing', 'account-information'];
+
+            if (unavailableCategories.includes(selectedCategory)) {
+                let message = '';
+                if (selectedCategory === 'account-information') {
+                    message = `The "Account Information" category is currently under maintenance. Please check back later.`;
+                } else {
+                    message = `The "${categoryDropdown.options[categoryDropdown.selectedIndex].text.replace(' - Coming Soon', '')}" category is coming soon! Please check back later.`;
+                }
+                showMessageBox(message);
+                subcategoryDropdown.disabled = true;
+                return;
+            }
+
             // If a category is selected, enable and populate the subcategory dropdown
             if (selectedCategory) {
                 const options = subcategories[selectedCategory];
-                if (options) {
+                if (options && options.length > 0) { // Check if options exist and are not empty
                     options.forEach(optionText => {
                         const option = document.createElement('option');
                         option.value = optionText.toLowerCase().replace(/\s/g, '-'); // Create a slug-like value
                         option.textContent = optionText;
                         subcategoryDropdown.appendChild(option);
                     });
+                    subcategoryDropdown.disabled = false; // Enable the subcategory dropdown
+                } else {
+                    // If no subcategories for a selected category, disable subcategory dropdown
+                    // This message is only for categories *not* marked as unavailable but have no subcategories
+                    if (!unavailableCategories.includes(selectedCategory)) {
+                         showMessageBox(`No specific subcategories available for "${categoryDropdown.options[categoryDropdown.selectedIndex].text}". Please provide details in the description.`);
+                    }
+                    subcategoryDropdown.disabled = true;
                 }
-                subcategoryDropdown.disabled = false; // Enable the subcategory dropdown
             } else {
                 // If no category is selected, disable the subcategory dropdown
                 subcategoryDropdown.disabled = true;
@@ -199,6 +281,21 @@
                 showMessageBox('Please select a category.');
                 return;
             }
+
+            // List of "Unavailable" categories for submission check
+            const unavailableCategories = ['merchandise', 'episode-player', 'content', 'billing', 'account-information'];
+
+            if (unavailableCategories.includes(category)) {
+                let message = '';
+                if (category === 'account-information') {
+                    message = `The "Account Information" category is currently under maintenance. You cannot submit a request for this category at this time.`;
+                } else {
+                    message = `The "${categoryDropdown.options[categoryDropdown.selectedIndex].text.replace(' - Coming Soon', '')}" category is coming soon! You cannot submit a request for this category at this time.`;
+                }
+                showMessageBox(message);
+                return;
+            }
+
             if (!subcategory && subcategoryDropdown.disabled === false) { // Check if subcategory is enabled and not selected
                  showMessageBox('Please select a subcategory.');
                  return;
