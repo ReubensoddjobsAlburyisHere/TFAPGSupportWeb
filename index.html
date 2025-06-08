@@ -3,321 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE FLAGPOCALYPSE Support Form</title>
+    <title>TFAPG Support Form</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Apply Inter font family globally */
         body {
-            font-family: "Inter", sans-serif;
-            background-image: url('https://i.imgur.com/oPyfp2H.png'); /* The background image */
-            background-size: cover; /* Cover the entire background */
-            background-repeat: no-repeat; /* Do not repeat the image */
-            background-position: center center; /* Center the image */
-            background-attachment: fixed; /* Keep the background fixed when scrolling */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-        }
-        /* Custom styles for the form container to blend with the background */
-        .form-container {
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            backdrop-filter: blur(5px); /* Frosted glass effect */
-            -webkit-backdrop-filter: blur(5px); /* For Safari support */
-            border-radius: 0.5rem; /* Tailwind's rounded-lg */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind's shadow-xl */
+            font-family: 'Inter', sans-serif;
+            /* New background image */
+            background-image: url('https://i.imgur.com/oPyfp2H.png');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Fixes the background image during scroll */
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
-    <div class="form-container p-8 w-full max-w-md mx-auto">
-        <h1 class="text-3xl font-bold text-center text-white mb-6">THE FLAGPOCALYPSE Support 👽</h1>
-        <form>
-            <div class="mb-5">
-                <label for="category" class="block text-white text-sm font-semibold mb-2">Category</label>
-                <select id="category" class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out bg-gray-700 text-white">
-                    <option value="">Select a Category</option>
-                    <option value="technical">Technical Issues (Website/Playback) 📺</option>
-                    <option value="billing">Billing & Payments 💸 - Coming Soon</option>
-                    <option value="content">Content Feedback (Show-Related) ✍️ - Coming Soon</option>
-                    <option value="merchandise">Merchandise & Store 🛍️ - Coming Soon</option>
-                    <option value="episode-player">Episode Player Issues 🎬 - Coming Soon</option>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <!-- Form container with transparent black background and light text -->
+    <div class="bg-black/70 p-8 rounded-lg shadow-xl w-full max-w-2xl border border-gray-700">
+        <!-- Removed Image at the top of the form -->
 
-                    <option value="account-information">Account Information ℹ️ - Under Maintenance</option>
-                    <option value="security-privacy">Security & Privacy 🔒</option>
-                    <option value="copyright-licensing">Copyright & Licensing ⚖️</option>
-                    <option value="casting-talent-submission">Casting & Talent Submissions 🌟</option>
-                    <option value="script-story-ideas">Script & Story Ideas 💡</option>
-                    <option value="locations-set-suggestions">Locations & Set Suggestions 🗺️</option>
-                    <option value="press-kit-request">Press Kit Request 📄</option>
-                    <option value="sponsorship-advertising">Sponsorship & Advertising 📈</option>
-                    <option value="fan-events-meetups">Fan Events & Meetups 🎉</option>
-                    <option value="general-inquiry">General Inquiry ❓</option>
+        <!-- Form Title -->
+        <h1 class="text-3xl font-bold text-center text-white mb-6">TFAPG Support Request</h1>
+        <p class="text-center text-gray-200 mb-8">
+            Please fill out the form below. When you submit, it will open your default email client with your request pre-filled.
+        </p>
 
-
-                    <option value="fan-community">Fan & Community 🤝</option>
-                    <option value="media-press">Media & Press Inquiries 📰</option>
-                    <option value="accessibility">Accessibility & Inclusivity 🧑‍🦽</option>
-                    <option value="job-opportunities">Job Opportunities 💼</option>
-                    <option value="report-bug">Report a Website Bug 🐞</option>
-                    <option value="partnership-sponsorship">Partnership & Sponsorship ✨</option>
-                </select>
-            </div>
-
+        <!-- The actual form -->
+        <!-- The form uses mailto: to send the data via email.
+             Note: mailto forms have limitations and may not send large amounts of data
+             or work consistently across all user email clients.
+             For a robust solution, server-side processing is typically required. -->
+        <form action="mailto:tfapghelp@gmail.com" method="post" enctype="text/plain" id="supportForm">
+            <!-- Your Contact Information Section -->
             <div class="mb-6">
-                <label for="subcategory" class="block text-white text-sm font-semibold mb-2">Subcategory</label>
-                <select id="subcategory" class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out bg-gray-700 text-white" disabled>
-                    <option value="">Select a Subcategory</option>
-                </select>
+                <h2 class="text-xl font-semibold text-gray-200 mb-4 pb-2 border-b border-gray-500">Your Contact Information</h2>
+                <!-- Name Input Field -->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-200 text-sm font-medium mb-2">Your Name:</label>
+                    <input type="text" id="name" name="Name" class="shadow-sm appearance-none border border-gray-600 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out" placeholder="John Doe" required>
+                </div>
+                <!-- Email Input Field -->
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-200 text-sm font-medium mb-2">Your Email Address:</label>
+                    <input type="email" id="email" name="Email" class="shadow-sm appearance-none border border-gray-600 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out" placeholder="john.doe@example.com" required>
+                </div>
             </div>
 
+            <!-- Your Inquiry Details Section -->
             <div class="mb-6">
-                <label for="description" class="block text-white text-sm font-semibold mb-2">Description</label>
-                <textarea id="description" rows="5" class="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y transition duration-200 ease-in-out bg-gray-700 text-white" placeholder="Please describe your issue or feedback in detail..."></textarea>
+                <h2 class="text-xl font-semibold text-gray-200 mb-4 pb-2 border-b border-gray-500">Your Inquiry Details</h2>
+                <!-- Category Dropdown -->
+                <div class="mb-4">
+                    <label for="category" class="block text-gray-200 text-sm font-medium mb-2">Category:</label>
+                    <select id="category" name="Category" class="shadow-sm appearance-none border border-gray-600 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out" required>
+                        <option value="" disabled selected>Please select a category</option>
+                        <option value="Technical Issues">Technical Issues (Website/Playback) 📺</option>
+                        <option value="App Support (Mobile/Desktop) - Under Review">App Support (Mobile/Desktop) 📱 - Under Review</option>
+                        <option value="Billing & Payments - Coming Soon">Billing & Payments 💸 - Coming Soon</option>
+                        <option value="Content Feedback">Content Feedback (Show-Related) ✍️</option>
+                        <option value="Merchandise & Store - Coming Soon">Merchandise & Store 🛍️ - Coming Soon</option>
+                        <option value="Episode Player Issues - Coming Soon">Episode Player Issues 🎬 - Coming Soon</option>
+                        <option value="Account Information - Under Maintenance">Account Information ℹ️ - Under Maintenance</option>
+                        <option value="Security & Privacy">Security & Privacy 🔒</option>
+                        <option value="Privacy Policy Questions">Privacy Policy Questions 📜</option>
+                        <option value="Copyright & Licensing">Copyright & Licensing ⚖️</option>
+                        <option value="Casting & Talent Submissions">Casting & Talent Submissions 🌟</option>
+                        <option value="Script & Story Ideas">Script & Story Ideas 💡</option>
+                        <option value="Locations & Set Suggestions">Locations & Set Suggestions 🗺️</option>
+                        <option value="Press Kit Request">Press Kit Request 📄</option>
+                        <option value="Press/Media Relations">Press/Media Relations 🎤</option>
+                        <option value="Sponsorship & Advertising">Sponsorship & Advertising 📈</option>
+                        <option value="Partnership Inquiries">Partnership Inquiries 🤝</option>
+                        <option value="Fan Events & Meetups">Fan Events & Meetups 🎉</option>
+                        <option value="Event Suggestions/Requests">Event Suggestions/Requests 🗓️</option>
+                        <option value="General Inquiry">General Inquiry ❓</option>
+                        <option value="General Feedback">General Feedback 💬</option>
+                        <option value="Fan & Community">Fan & Community 🤝</option>
+                        <option value="Media & Press Inquiries">Media & Press Inquiries 📰</option>
+                        <option value="Accessibility & Inclusivity">Accessibility & Inclusivity 🧑‍🦽</option>
+                        <option value="Job Opportunities">Job Opportunities 💼</option>
+                        <option value="Volunteer Opportunities">Volunteer Opportunities 🙌</option>
+                        <option value="Donation & Philanthropy">Donation & Philanthropy 💖</option>
+                        <option value="Report a Website Bug">Report a Website Bug 🐞</option>
+                        <option value="Product/Feature Request">Product/Feature Request ✨</option>
+                        <option value="Data Request/Deletion - Coming Soon">Data Request/Deletion 📊 - Coming Soon</option>
+                        <option value="Partnership & Sponsorship">Partnership & Sponsorship</option>
+                    </select>
+                    <!-- Status message for 'Coming Soon', 'Under Maintenance', or 'Under Review' categories -->
+                    <div id="statusMessage" class="hidden text-center text-orange-400 font-medium mt-2"></div>
+                </div>
+                <!-- Subcategory Dropdown - now wrapped in a div to control its visibility -->
+                <div id="subcategoryField" class="mb-4 hidden"> <!-- Added 'hidden' class here -->
+                    <label for="subcategory" class="block text-gray-200 text-sm font-medium mb-2">Subcategory (if applicable):</label>
+                    <select id="subcategory" name="Subcategory" class="shadow-sm appearance-none border border-gray-600 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out">
+                        <option value="" disabled selected>Please select a subcategory (optional)</option>
+                        <!-- Options will be dynamically populated by JavaScript based on Category selection -->
+                    </select>
+                </div>
+                <!-- Your Message Textarea -->
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-200 text-sm font-medium mb-2">Your Message:</label>
+                    <textarea id="message" name="Message" rows="6" class="shadow-sm appearance-none border border-gray-600 rounded-md w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out resize-y" placeholder="Please describe your issue or question in detail. Include any relevant information like dates, times, or specific error messages." required></textarea>
+                </div>
             </div>
 
-            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200 ease-in-out shadow-md">
-                Submit Support Request
-            </button>
+            <!-- Submit Button -->
+            <div class="flex items-center justify-center">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300 ease-in-out transform hover:scale-105">
+                    Send Support Request
+                </button>
+            </div>
         </form>
-
-        <div id="messageBox" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center p-4">
-            <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
-                <p id="messageText" class="text-gray-800 text-lg mb-4"></p>
-                <button id="closeMessageBox" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">OK</button>
-            </div>
-        </div>
     </div>
 
     <script>
-        // Get references to the dropdowns
-        const categoryDropdown = document.getElementById('category');
-        const subcategoryDropdown = document.getElementById('subcategory');
-        const messageBox = document.getElementById('messageBox');
-        const messageText = document.getElementById('messageText');
-        const closeMessageBox = document.getElementById('closeMessageBox');
-        const form = document.querySelector('form');
-
-        // Define subcategories based on categories for a TV show context
+        // Define subcategories for each main category with emojis
         const subcategories = {
-            technical: [
-                'Website Loading Issues',
-                'Navigation Problems',
-                'Broken Links'
-            ],
-            billing: [], // Empty for "Coming Soon"
-            content: [], // Empty for "Coming Soon"
-            merchandise: [], // Empty for "Coming Soon"
-            'episode-player': [], // Empty for "Coming Soon"
-
-            // Subcategories for new categories (adjusted for no accounts)
-            'account-information': [], // Empty for "Under Maintenance"
-            'security-privacy': [
-                'Data Privacy Concerns',
-                'Website Security Questions',
-                'Privacy Policy Questions',
-                'Reporting Suspicious Website Activity',
-                'Other Security Issue'
-            ],
-            'copyright-licensing': [
-                'Copyright Infringement Report',
-                'Content Usage Inquiry',
-                'Licensing Request',
-                'Intellectual Property Question'
-            ],
-            'casting-talent-submission': [
-                'Actor Submission Inquiry',
-                'Crew Portfolio Submission',
-                'Audition Information',
-                'Talent Partnership'
-            ],
-            'script-story-ideas': [
-                'Original Script Submission',
-                'Story Idea Suggestion',
-                'Fan Fiction Inquiry',
-                'Writer Collaboration'
-            ],
-            'locations-set-suggestions': [
-                'Filming Location Suggestion',
-                'Set Design Idea',
-                'Prop Donation/Loan',
-                'Venue Collaboration'
-            ],
-            'press-kit-request': [
-                'Request Full Press Kit',
-                'Specific Asset Request (Photos/Videos)',
-                'Media Kit for Event',
-                'Interview Request'
-            ],
-            'sponsorship-advertising': [
-                'Sponsorship Proposal',
-                'Advertising Inquiry',
-                'Product Placement Opportunity',
-                'Brand Integration'
-            ],
-            'fan-events-meetups': [
-                'Suggest a Fan Event Location',
-                'Request for Guest Appearance',
-                'Fan Meetup Support',
-                'Virtual Event Idea'
-            ],
-            'general-inquiry': [
-                'General Question About The Show',
-                'Website Navigation Help',
-                'Feedback on Support Form',
-                'Other General Question'
-            ],
-
-
-            'fan-community': [
-                'Fan Art Submission',
-                'Community Guidelines Inquiry',
-                'Event Suggestions',
-                'Collaboration Ideas'
-            ],
-            'media-press': [
-                'Interview Request',
-                'Press Kit Request',
-                'Licensing Inquiries',
-                'Partnership Opportunities'
-            ],
-            accessibility: [
-                'Accessibility Feature Request',
-                'Reporting Accessibility Issue',
-                'Translation/Dubbing Feedback',
-                'Language Support'
-            ],
-            'job-opportunities': [
-                'Acting/Casting Inquiry',
-                'Crew Position Inquiry',
-                'Internship Opportunities',
-                'General Job Application'
-            ],
-            'report-bug': [
-                'Website Display Bug',
-                'Functionality Bug',
-                'Broken Feature',
-                'Other Website Bug'
-            ],
-            'partnership-sponsorship': [
-                'Brand Partnership',
-                'Event Sponsorship',
-                'Content Collaboration',
-                'Other Partnership'
-            ],
+            "Technical Issues": ["Website Glitch 🕸️", "Playback Error ⏯️", "Login Issue 🔑", "Loading Problems ⏳", "Feature Not Working 🚫", "Other Technical Issue ⚙️"],
+            // Note: App Support, Billing & Payments, Merchandise, Episode Player, Account Info, and Data Request/Deletion
+            // do not have subcategories listed here as their subcategory dropdown will be hidden/disabled.
+            "Content Feedback": ["Episode Suggestion 📝", "Show Feedback 👍", "Content Error 🐛", "Request New Content ✨", "Guest Suggestion 🎤", "Other Content Feedback 💬"],
+            "Security & Privacy": ["Data Breach Concern 🚨", "Privacy Policy Question 📜", "Report Suspicious Activity 🕵️", "Data Request 📊", "Account Security ✅", "Other Security/Privacy 🔐"],
+            "Privacy Policy Questions": ["Data Usage Inquiry 📊", "Consent Questions ✅", "Policy Clarification 📄", "GDPR/CCPA Rights ⚖️", "Other Privacy Concern 🔒"],
+            "Copyright & Licensing": ["Content Usage ©", "Licensing Inquiry ™️", "Copyright Infringement ⚖️", "Permission Request 🙏", "Other Legal 🧑‍⚖️"],
+            "Casting & Talent Submissions": ["Acting Submission 🎭", "Voice Acting 🗣️", "Extra/Background 👥", "Talent Inquiry ⭐", "Other Submission 📧"],
+            "Script & Story Ideas": ["Series Idea ✍️", "Episode Concept 💡", "Character Idea 🦸", "Plot Suggestion 📖", "Other Creative Idea 🧠"],
+            "Locations & Set Suggestions": ["Filming Location 📍", "Set Design Idea 🏗️", "Prop Suggestion 🛋️", "Other Production Suggestion 🎬"],
+            "Press Kit Request": ["Media Kit Request 📰", "Brand Guidelines 📏", "Logos/Assets 🖼️", "Press Inquiry 🎤"],
+            "Press/Media Relations": ["Interview Request 🎙️", "News Release 🗞️", "Media Partnership 🤝", "Background Information 🧠", "Other Media Inquiry 🎤"],
+            "Sponsorship & Advertising": ["Sponsorship Opportunity 🤝", "Advertising Inquiry 📈", "Partnership Proposal 📝", "Brand Collaboration ✨"],
+            "Partnership Inquiries": ["Collaboration Idea 🤝", "Joint Venture 🔗", "Affiliate Program 🏷️", "Marketing Partnership 📈", "Other Partnership 💡"],
+            "Fan Events & Meetups": ["Event Suggestion 🎉", "Meetup Inquiry 👋", "Appearance Request 🌟", "Fan Convention 🥳"],
+            "Event Suggestions/Requests": ["Online Event Idea 💻", "In-person Event Request 🏟️", "Guest Speaker Suggestion 🎤", "Event Feedback 👍", "Other Event Query 🗓️"],
+            "General Inquiry": ["General Question ❓", "Feedback ✅", "Suggestion 👍", "Website Information 🌐", "Other Inquiry 💡"],
+            "General Feedback": ["Website Experience 👍", "Content Quality ✨", "Overall Satisfaction 😊", "Suggestions for Improvement 💡", "Other Feedback 💬"],
+            "Fan & Community": ["Community Guidelines 📄", "Fan Art Submission 🎨", "Fan Club Info 💖", "Forum Issue 💬", "Social Media Question 📱"],
+            "Media & Press Inquiries": ["Interview Request 🎙️", "Press Release Info 🗞️", "Media Partnership 🤝", "Review Copy Request ✍️"],
+            "Accessibility & Inclusivity": ["Accessibility Feature 🧑‍🦽", "Inclusivity Feedback 🌈", "Language Options 🌐", "Disability Support ❤️"],
+            "Job Opportunities": ["Application Status 📄", "Internship Inquiry 🧑‍🎓", "Career Information 📈", "Specific Job Role Question ❓"],
+            "Volunteer Opportunities": ["Become a Volunteer 🙌", "Volunteer Roles 📋", "Volunteer Event Info 🗓️", "Application Status 📄", "Other Volunteer Query 💬"],
+            "Donation & Philanthropy": ["Donation Inquiry 💖", "Charity Partnership 🤝", "Receipt Request 🧾", "Impact Information 🌟", "Other Donation Query 💰"],
+            "Report a Website Bug": ["Broken Link 🔗", "Display Error 🖥️", "Form Not Working 🚫", "Performance Issue 🐌", "Security Vulnerability 🚨", "Other Bug 🐞"],
+            "Product/Feature Request": ["New Feature Idea ✨", "Improvement Suggestion 💡", "Platform Functionality ⚙️", "Tool Request 🛠️", "Other Product Idea 🚀"],
+            "Partnership & Sponsorship": ["Collaboration Inquiry 🤝", "Event Sponsorship 🎉", "Content Partnership ✍️", "Brand Ambassador ⭐"]
         };
 
+        const categorySelect = document.getElementById('category');
+        const subcategorySelect = document.getElementById('subcategory');
+        const subcategoryFieldDiv = document.getElementById('subcategoryField');
+        const statusMessageDiv = document.getElementById('statusMessage');
+        const supportForm = document.getElementById('supportForm');
+
         /**
-         * Displays a custom message box instead of using alert().
-         * @param {string} message - The message to display.
+         * Populates the subcategory dropdown based on the selected main category,
+         * or displays a status message and hides/shows the subcategory dropdown.
          */
-        function showMessageBox(message) {
-            messageText.textContent = message;
-            messageBox.classList.remove('hidden');
-            messageBox.classList.add('flex');
+        function populateSubcategories() {
+            const selectedCategory = categorySelect.value;
+            // Clear any previous status message and hide it
+            statusMessageDiv.textContent = '';
+            statusMessageDiv.classList.add('hidden');
+
+            // Clear existing options in subcategory dropdown and reset to default
+            subcategorySelect.innerHTML = '<option value="" disabled selected>Please select a subcategory (optional)</option>';
+
+            const isComingSoon = selectedCategory.includes("Coming Soon");
+            const isUnderMaintenance = selectedCategory.includes("Under Maintenance");
+            const isUnderReview = selectedCategory.includes("Under Review"); // New status check
+            const isSpecialCategory = isComingSoon || isUnderMaintenance || isUnderReview;
+
+            if (selectedCategory === "") {
+                // If no category is selected, hide the subcategory field
+                subcategoryFieldDiv.classList.add('hidden');
+            } else if (isSpecialCategory) {
+                // Hide subcategory dropdown for special categories
+                subcategoryFieldDiv.classList.add('hidden');
+                // Display specific status message based on the type
+                if (isComingSoon) {
+                    statusMessageDiv.textContent = "This feature is coming soon! We appreciate your patience.";
+                } else if (isUnderMaintenance) {
+                    statusMessageDiv.textContent = "This section is currently under maintenance. We apologize for the inconvenience.";
+                } else if (isUnderReview) { // New message for "Under Review"
+                    statusMessageDiv.textContent = "This section is currently under review. We appreciate your patience.";
+                }
+                statusMessageDiv.classList.remove('hidden');
+            } else if (subcategories[selectedCategory]) {
+                // Show the subcategory field for regular categories
+                subcategoryFieldDiv.classList.remove('hidden');
+                // Populate subcategories for regular categories
+                subcategories[selectedCategory].forEach(sub => {
+                    const option = document.createElement('option');
+                    option.value = sub;
+                    option.textContent = sub;
+                    subcategorySelect.appendChild(option);
+                });
+            } else {
+                // For categories without defined subcategories, show the field but keep default option
+                // This means if a new category is added but not in `subcategories` object, the dropdown will appear empty.
+                subcategoryFieldDiv.classList.remove('hidden');
+            }
         }
 
-        // Event listener for category dropdown change
-        categoryDropdown.addEventListener('change', () => {
-            const selectedCategory = categoryDropdown.value;
-            // Clear existing options in subcategory dropdown
-            subcategoryDropdown.innerHTML = '<option value="">Select a Subcategory</option>';
+        // Add event listener to the category dropdown to populate subcategories on change
+        categorySelect.addEventListener('change', populateSubcategories);
 
-            // List of "Unavailable" categories (Coming Soon or Under Maintenance)
-            const unavailableCategories = ['merchandise', 'episode-player', 'content', 'billing', 'account-information'];
+        /**
+         * Handles form submission, constructs the email subject and body, and opens mailto link.
+         * @param {Event} event - The form submission event.
+         */
+        supportForm.addEventListener('submit', function(event) {
+            // Prevent default form submission to manually construct mailto link
+            event.preventDefault();
 
-            if (unavailableCategories.includes(selectedCategory)) {
-                let message = '';
-                if (selectedCategory === 'account-information') {
-                    message = `The "Account Information" category is currently under maintenance. Please check back later.`;
-                } else {
-                    message = `The "${categoryDropdown.options[categoryDropdown.selectedIndex].text.replace(' - Coming Soon', '')}" category is coming soon! Please check back later.`;
-                }
-                showMessageBox(message);
-                subcategoryDropdown.disabled = true;
-                return;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const category = document.getElementById('category').value;
+            const message = document.getElementById('message').value;
+
+            // Get subcategory value only if the field is visible (not hidden)
+            let subcategory = '';
+            if (!subcategoryFieldDiv.classList.contains('hidden')) {
+                subcategory = subcategorySelect.value;
             }
 
-            // If a category is selected, enable and populate the subcategory dropdown
-            if (selectedCategory) {
-                const options = subcategories[selectedCategory];
-                if (options && options.length > 0) { // Check if options exist and are not empty
-                    options.forEach(optionText => {
-                        const option = document.createElement('option');
-                        option.value = optionText.toLowerCase().replace(/\s/g, '-'); // Create a slug-like value
-                        option.textContent = optionText;
-                        subcategoryDropdown.appendChild(option);
-                    });
-                    subcategoryDropdown.disabled = false; // Enable the subcategory dropdown
-                } else {
-                    // If no subcategories for a selected category, disable subcategory dropdown
-                    // This message is only for categories *not* marked as unavailable but have no subcategories
-                    if (!unavailableCategories.includes(selectedCategory)) {
-                         showMessageBox(`No specific subcategories available for "${categoryDropdown.options[categoryDropdown.selectedIndex].text}". Please provide details in the description.`);
-                    }
-                    subcategoryDropdown.disabled = true;
-                }
+            // Construct the email subject
+            let subject = `Support Request - ${category}`;
+            // Only add subcategory to subject if it's not a special category and a subcategory is selected
+            const isComingSoon = category.includes("Coming Soon");
+            const isUnderMaintenance = category.includes("Under Maintenance");
+            const isUnderReview = category.includes("Under Review");
+            const isSpecialCategory = isComingSoon || isUnderMaintenance || isUnderReview;
+
+            if (!isSpecialCategory && subcategory && subcategory !== 'Please select a subcategory (optional)') {
+                subject += ` - ${subcategory}`;
+            }
+            subject = encodeURIComponent(subject);
+
+            // Construct the email body
+            let bodyContent = `Hello TFAPG Team,
+
+I am writing to submit a support request. Here are my details and inquiry:
+
+Your Name: ${name}
+Your Email Address: ${email}
+
+Category: ${category}
+`;
+
+            // Include status message if present, otherwise subcategory
+            if (statusMessageDiv.textContent && !statusMessageDiv.classList.contains('hidden')) {
+                bodyContent += `Status: ${statusMessageDiv.textContent}
+`;
+            } else if (!isSpecialCategory && subcategory && subcategory !== 'Please select a subcategory (optional)') {
+                 bodyContent += `Subcategory: ${subcategory}
+`;
             } else {
-                // If no category is selected, disable the subcategory dropdown
-                subcategoryDropdown.disabled = true;
+                 bodyContent += `Subcategory: N/A (No subcategory selected or applicable)
+`;
             }
+
+            bodyContent += `
+---
+
+My Message:
+${message}
+
+---
+
+Thank immense you for your time and assistance.
+
+Sincerely,
+${name}`;
+
+            const body = encodeURIComponent(bodyContent);
+
+            // Create the mailto link
+            const mailtoLink = `mailto:tfapghelp@gmail.com?subject=${subject}&body=${body}`;
+
+            // Open the mailto link
+            window.location.href = mailtoLink;
         });
 
-        // Event listener for closing the custom message box
-        closeMessageBox.addEventListener('click', () => {
-            messageBox.classList.add('hidden');
-            messageBox.classList.remove('flex');
-        });
-
-        // Handle form submission
-        form.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent default form submission
-
-            const category = categoryDropdown.value;
-            const subcategory = subcategoryDropdown.value;
-            const description = document.getElementById('description').value.trim();
-
-            if (!category) {
-                showMessageBox('Please select a category.');
-                return;
-            }
-
-            // List of "Unavailable" categories for submission check
-            const unavailableCategories = ['merchandise', 'episode-player', 'content', 'billing', 'account-information'];
-
-            if (unavailableCategories.includes(category)) {
-                let message = '';
-                if (category === 'account-information') {
-                    message = `The "Account Information" category is currently under maintenance. You cannot submit a request for this category at this time.`;
-                } else {
-                    message = `The "${categoryDropdown.options[categoryDropdown.selectedIndex].text.replace(' - Coming Soon', '')}" category is coming soon! You cannot submit a request for this category at this time.`;
-                }
-                showMessageBox(message);
-                return;
-            }
-
-            if (!subcategory && subcategoryDropdown.disabled === false) { // Check if subcategory is enabled and not selected
-                 showMessageBox('Please select a subcategory.');
-                 return;
-             }
-            if (!description) {
-                showMessageBox('Please provide a description for your issue.');
-                return;
-            }
-
-            // Simulate form submission (in a real app, you'd send this data to a server)
-            console.log('Support Request Submitted:');
-            console.log('Category:', category);
-            console.log('Subcategory:', subcategory);
-            console.log('Description:', description);
-
-            showMessageBox('Your support request has been submitted successfully!');
-
-            // Optionally, reset the form after successful submission
-            form.reset();
-            subcategoryDropdown.innerHTML = '<option value="">Select a Subcategory</option>';
-            subcategoryDropdown.disabled = true;
-        });
+        // Initialize on page load to set initial state correctly
+        populateSubcategories();
     </script>
 </body>
 </html>
